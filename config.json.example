@@ -1,0 +1,12 @@
+{
+  "openai_key": "",
+  "bot_token": "",
+  "guild_id": "",
+  "bot_owner_id": "",
+  "client_id": "",
+  "engine": "gpt-4",
+  "base_prompt": "",
+  "cooldown_enabled": true,
+  "cooldown_time_mins": 5,
+  "cooldown_whitelist": []
+}
