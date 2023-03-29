@@ -8,5 +8,6 @@
   "base_prompt": "",
   "cooldown_enabled": true,
   "cooldown_time_mins": 5,
-  "cooldown_whitelist": []
+  "cooldown_whitelist": [],
+  "bot_status": ""
 }

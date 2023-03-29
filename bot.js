@@ -74,9 +74,10 @@ client.on("interactionCreate", async (interaction) => {
 });
 
 client.on("ready", () => {
-  client.user.setActivity("you give away your data", { type: "WATCHING" });
-  client.user.setPresence({ status: "dnd" });
-  console.log("Bot Online!");
+  client.user.setPresence({
+    activities: [{ name: config.bot_status, type: "WATCHING" }],
+    status: "dnd",
+  });
 });
 
 client.login(config.bot_token);
