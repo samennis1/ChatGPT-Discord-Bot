@@ -29,12 +29,19 @@ client.on("interactionCreate", async (interaction) => {
 
     let embed = new EmbedBuilder()
       .setTitle("ChatGPT-4")
+      .setDescription(
+        "[**View On GitHub**](https://github.com/samennis1/ChatGPT-Discord-Bot)"
+      )
       .addFields(
         { name: interaction.user.username, value: userMessage },
-        { name: "ChatGPT-4", value: chatGptReply }
+        { name: "ChatGPT", value: chatGptReply }
       )
       .setColor("#6B5B95")
       .setThumbnail(client.user.avatarURL())
+      .setFooter({
+        text: `Created by @samennis1. Powered by ${config.engine}`,
+        iconURL: "https://avatars.githubusercontent.com/u/4116928?v=4",
+      })
       .setTimestamp();
 
     await interaction.editReply({ embeds: [embed] });
