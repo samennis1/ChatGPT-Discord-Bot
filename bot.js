@@ -25,7 +25,31 @@ client.on("interactionCreate", async (interaction) => {
     }
 
     cooldowns.addCooldown(interaction.user.id);
+
     const chatGptReply = await fetchResponse(userMessage);
+
+    // For every 1000 characters in chatGptReply, add a new field
+    let fields = [];
+    let field = { name: "ChatGPT", value: "" };
+    for (let i = 0; i < chatGptReply.length; i++) {
+      if (field.value.length < 1000) {
+        field.value += chatGptReply[i];
+
+        if (i == chatGptReply.length - 1) fields.push(field);
+      } else {
+        let addValue = chatGptReply[i];
+
+        if (field.value.split("```").length % 3 !== 0) {
+          const language = field.value.split("```")[1].split("\n")[0];
+          addValue = "```" + language + "\n" + addValue;
+        }
+
+        field.value += "```";
+
+        fields.push(field);
+        field = { name: "Continued...", value: addValue };
+      }
+    }
 
     let embed = new EmbedBuilder()
       .setTitle("ChatGPT-4")
@@ -34,7 +58,7 @@ client.on("interactionCreate", async (interaction) => {
       )
       .addFields(
         { name: interaction.user.username, value: userMessage },
-        { name: "ChatGPT", value: chatGptReply }
+        ...fields
       )
       .setColor("#6B5B95")
       .setThumbnail(client.user.avatarURL())
