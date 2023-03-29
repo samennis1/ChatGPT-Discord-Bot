@@ -39,12 +39,13 @@ client.on("interactionCreate", async (interaction) => {
       } else {
         let addValue = chatGptReply[i];
 
-        if (field.value.split("```").length % 3 !== 0) {
+        const hasCodeBlock = field.value.split("```");
+
+        if (hasCodeBlock.length && hasCodeBlock.length % 3 !== 0) {
           const language = field.value.split("```")[1].split("\n")[0];
+          field.value += "```";
           addValue = "```" + language + "\n" + addValue;
         }
-
-        field.value += "```";
 
         fields.push(field);
         field = { name: "Continued...", value: addValue };
