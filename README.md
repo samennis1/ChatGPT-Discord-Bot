@@ -25,9 +25,9 @@ Welcome to the ChatGPT Discord Bot! This bot allows you to chat with an AI langu
    - Whether Cooldown system is enabled
    - Cooldown milliseconds
    - List any users who can bypass this cooldown
-6. Type `pnpm i`
-7. Type `pnpm register_slash`
-8. Type `pnpm bot`
+6. Type `npm i`
+7. Type `node register_slash`
+8. Type `node bot`
 
 ## Examples
 
