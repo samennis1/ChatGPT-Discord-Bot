@@ -41,7 +41,7 @@ client.on("interactionCreate", async (interaction) => {
 
         const hasCodeBlock = field.value.split("```");
 
-        if (hasCodeBlock.length && hasCodeBlock.length % 3 !== 0) {
+        if (hasCodeBlock.length > 1 && hasCodeBlock.length % 3 !== 0) {
           const language = field.value.split("```")[1].split("\n")[0];
           field.value += "```";
           addValue = "```" + language + "\n" + addValue;
