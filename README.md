@@ -1,6 +1,6 @@
 # ChatGPT Discord Bot
 
-Welcome to the ChatGPT Discord Bot! This bot allows you to chat with an AI language model called ChatGPT. With ChatGPT, you can have conversations about any topic imaginable, from the weather and sports to science and philosophy. The bot is powered by OpenAI's GPT architecture, which makes it capable of holding intelligent, nuanced conversations that feel almost human-like.
+Welcome to the ChatGPT Discord Bot GitHub repo! This project provides a friendly AI that you can chat with on Discord using the ChatGPT language model by OpenAI. Engage in captivating conversations on a wide array of topics, ranging from casual chitchat to in-depth discussions. Experience the GPT-powered bot's human-like capabilities firsthand!
 
 ## Features
 
